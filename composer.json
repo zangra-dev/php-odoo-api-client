@@ -20,7 +20,7 @@
     "require": {
         "php": ">=7.2.5 || ^8.1",
         "ext-json": "*",
-        "ang3/php-xmlrpc-client": "^1.0.2",
+        "zangra/php-xmlrpc-client": "^1.0",
         "psr/log": "^1.1"
     },
     "require-dev": {
