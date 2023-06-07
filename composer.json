@@ -1,6 +1,6 @@
 {
     "name": "zangra/php-odoo-api-client",
-    "type": "component",
+    "type": "symfony-bundle",
     "description": "Odoo API client forked from https://github.com/Ang3 ",
     "keywords": ["odoo", "api", "client", "domain", "operation", "dbal", "query", "builder", "repository", "builder", "12", "13"],
     "license": "MIT",
