@@ -1,6 +1,6 @@
 <?php
 
-namespace Ang3\Component\Odoo\DBAL\Expression;
+namespace Zangra\Component\Odoo\DBAL\Expression;
 
 class ConversionException extends \RuntimeException
 {

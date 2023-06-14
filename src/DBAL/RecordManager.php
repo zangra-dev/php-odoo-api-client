@@ -1,17 +1,17 @@
 <?php
 
-namespace Ang3\Component\Odoo\DBAL;
+namespace Zangra\Component\Odoo\DBAL;
 
-use Ang3\Component\Odoo\Client;
-use Ang3\Component\Odoo\DBAL\Expression\DomainInterface;
-use Ang3\Component\Odoo\DBAL\Expression\ExpressionBuilderAwareTrait;
-use Ang3\Component\Odoo\DBAL\Query\NativeQuery;
-use Ang3\Component\Odoo\DBAL\Query\OrmQuery;
-use Ang3\Component\Odoo\DBAL\Query\QueryBuilder;
-use Ang3\Component\Odoo\DBAL\Query\QueryInterface;
-use Ang3\Component\Odoo\DBAL\Repository\RecordNotFoundException;
-use Ang3\Component\Odoo\DBAL\Repository\RecordRepository;
-use Ang3\Component\Odoo\DBAL\Schema\Schema;
+use Zangra\Component\Odoo\Client;
+use Zangra\Component\Odoo\DBAL\Expression\DomainInterface;
+use Zangra\Component\Odoo\DBAL\Expression\ExpressionBuilderAwareTrait;
+use Zangra\Component\Odoo\DBAL\Query\NativeQuery;
+use Zangra\Component\Odoo\DBAL\Query\OrmQuery;
+use Zangra\Component\Odoo\DBAL\Query\QueryBuilder;
+use Zangra\Component\Odoo\DBAL\Query\QueryInterface;
+use Zangra\Component\Odoo\DBAL\Repository\RecordNotFoundException;
+use Zangra\Component\Odoo\DBAL\Repository\RecordRepository;
+use Zangra\Component\Odoo\DBAL\Schema\Schema;
 
 class RecordManager
 {

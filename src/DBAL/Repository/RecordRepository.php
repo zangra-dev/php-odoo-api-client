@@ -1,11 +1,11 @@
 <?php
 
-namespace Ang3\Component\Odoo\DBAL\Repository;
+namespace Zangra\Component\Odoo\DBAL\Repository;
 
-use Ang3\Component\Odoo\DBAL\Expression\DomainInterface;
-use Ang3\Component\Odoo\DBAL\Expression\ExpressionBuilder;
-use Ang3\Component\Odoo\DBAL\Query\QueryBuilder;
-use Ang3\Component\Odoo\DBAL\RecordManager;
+use Zangra\Component\Odoo\DBAL\Expression\DomainInterface;
+use Zangra\Component\Odoo\DBAL\Expression\ExpressionBuilder;
+use Zangra\Component\Odoo\DBAL\Query\QueryBuilder;
+use Zangra\Component\Odoo\DBAL\RecordManager;
 use InvalidArgumentException;
 
 class RecordRepository

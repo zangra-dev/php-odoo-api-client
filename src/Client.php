@@ -1,13 +1,13 @@
 <?php
 
-namespace Ang3\Component\Odoo;
+namespace Zangra\Component\Odoo;
 
-use Ang3\Component\Odoo\DBAL\Expression\ExpressionBuilderAwareTrait;
-use Ang3\Component\Odoo\DBAL\Query\OrmQuery;
-use Ang3\Component\Odoo\DBAL\RecordManager;
-use Ang3\Component\Odoo\Exception\AuthenticationException;
-use Ang3\Component\Odoo\Exception\MissingConfigParameterException;
-use Ang3\Component\Odoo\Exception\RequestException;
+use Zangra\Component\Odoo\DBAL\Expression\ExpressionBuilderAwareTrait;
+use Zangra\Component\Odoo\DBAL\Query\OrmQuery;
+use Zangra\Component\Odoo\DBAL\RecordManager;
+use Zangra\Component\Odoo\Exception\AuthenticationException;
+use Zangra\Component\Odoo\Exception\MissingConfigParameterException;
+use Zangra\Component\Odoo\Exception\RequestException;
 use InvalidArgumentException;
 use Psr\Log\LoggerInterface;
 
