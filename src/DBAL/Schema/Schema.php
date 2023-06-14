@@ -1,9 +1,9 @@
 <?php
 
-namespace Ang3\Component\Odoo\DBAL\Schema;
+namespace Zangra\Component\Odoo\DBAL\Schema;
 
-use Ang3\Component\Odoo\Client;
-use Ang3\Component\Odoo\DBAL\Query\OrmQuery;
+use Zangra\Component\Odoo\Client;
+use Zangra\Component\Odoo\DBAL\Query\OrmQuery;
 
 class Schema
 {

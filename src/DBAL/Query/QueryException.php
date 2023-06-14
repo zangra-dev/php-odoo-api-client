@@ -1,6 +1,6 @@
 <?php
 
-namespace Ang3\Component\Odoo\DBAL\Query;
+namespace Zangra\Component\Odoo\DBAL\Query;
 
 class QueryException extends \LogicException
 {

@@ -13,8 +13,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Odoo\\": "src/",
-            "Odoo\\Tests\\": "tests/"
+            "Zangra\\Component\\Odoo\\": "src/",
+            "Zangra\\Component\\Odoo\\Tests\\": "tests/"
         }
     },
     "require": {

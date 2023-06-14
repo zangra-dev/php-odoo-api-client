@@ -1,6 +1,6 @@
 <?php
 
-namespace Ang3\Component\Odoo\Tests\Utils;
+namespace Zangra\Component\Odoo\Tests\Utils;
 
 use ReflectionClass;
 use ReflectionException;

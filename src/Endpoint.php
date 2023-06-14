@@ -1,11 +1,11 @@
 <?php
 
-namespace Ang3\Component\Odoo;
+namespace Zangra\Component\Odoo;
 
-use Ang3\Component\Odoo\Exception\RemoteException;
-use Ang3\Component\Odoo\Exception\RequestException;
-use Ang3\Component\XmlRpc\Client as XmlRpcClient;
-use Ang3\Component\XmlRpc\Exception\RemoteException as XmlRpcRemoteException;
+use Zangra\Component\Odoo\Exception\RemoteException;
+use Zangra\Component\Odoo\Exception\RequestException;
+use Zangra\Component\XmlRpc\Client as XmlRpcClient;
+use Zangra\Component\XmlRpc\Exception\RemoteException as XmlRpcRemoteException;
 use Throwable;
 
 class Endpoint

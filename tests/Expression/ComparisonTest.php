@@ -1,12 +1,12 @@
 <?php
 
-namespace Ang3\Component\Odoo\Tests\Expression;
+namespace Zangra\Component\Odoo\Tests\Expression;
 
-use Ang3\Component\Odoo\DBAL\Expression\Comparison;
+use Zangra\Component\Odoo\DBAL\Expression\Comparison;
 use ReflectionException;
 
 /**
- * @coversDefaultClass \Ang3\Component\Odoo\DBAL\Expression\Comparison
+ * @coversDefaultClass \Zangra\Component\Odoo\DBAL\Expression\Comparison
  */
 class ComparisonTest extends AbstractDomainTest
 {
