@@ -283,6 +283,18 @@ class Client
     }
 
     /**
+     * Find ONE product by default_code. Return the id and the default_code
+     *
+     * @throws InvalidArgumentException when $criteria value is not valid
+     * @throws RequestException         when request failed
+     */
+    public function findProductByCode(string $modelName, $code, array $options = []): ?array
+    {
+        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, array(array(array('default_code', '=', $code))) , $options);
+        return array_pop($result);
+    }
+    
+    /**
      * Check if a record exists.
      *
      * @throws RequestException when request failed
