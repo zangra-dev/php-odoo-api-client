@@ -283,20 +283,14 @@ class Client
     }
 
     /**
-     * Find ONE product by default_code. Return the id and the default_code
-     *
-     * @throws InvalidArgumentException when $criteria value is not valid
-     * @throws RequestException         when request failed
+     * @param string $modelName
+     * @param $criteria
+     * @param array $options
+     * @return array|null
      */
-    public function findProductByCode(string $modelName, $code, array $options = []): ?array
+    public function customFindBy(string $modelName, $criteria, array $options = []): ?array
     {
-        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, array(array(array('default_code', '=', $code))) , $options);
-        return array_shift($result);
-    }
-
-    public function findQuantByProductId(string $modelName, $productId, array $options = []): ?array
-    {
-        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, array(array(array('product_id', '=', $productId))) , $options);
+        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, $criteria , $options);
         return array_shift($result);
     }
 
