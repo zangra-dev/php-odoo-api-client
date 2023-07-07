@@ -291,9 +291,15 @@ class Client
     public function findProductByCode(string $modelName, $code, array $options = []): ?array
     {
         $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, array(array(array('default_code', '=', $code))) , $options);
-        return array_pop($result);
+        return array_shift($result);
     }
-    
+
+    public function findQuantByProductId(string $modelName, $productId, array $options = []): ?array
+    {
+        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, array(array(array('product_id', '=', $productId))) , $options);
+        return array_shift($result);
+    }
+
     /**
      * Check if a record exists.
      *
