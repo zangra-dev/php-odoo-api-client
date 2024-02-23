@@ -294,6 +294,18 @@ class Client
         return array_shift($result);
     }
 
+    public function findStockDatas($warehouseId, $criteria, array $options = []): ?array
+    {
+        $results = (array) $this->call('stock.quant', OrmQuery::SEARCH_READ, $criteria , $options);
+        foreach ($results as $result) {
+            if ($result['warehouse_id'] && $result['warehouse_id'][0] === $warehouseId ) {
+                return  $result;
+            }
+        }
+
+        return [];
+    }
+
     /**
      * Check if a record exists.
      *
