@@ -30,18 +30,6 @@ to upgrade your version easily.
 If you are in Symfony application you should be interested in the bundle 
 [ang3/odoo-bundle](https://github.com/Ang3/odoo-bundle) (client integration).
 
-Requirements
-============
-
-- The PHP extension ```php-xmlrpc``` must be enabled.
-
-| Odoo server | Compatibility | Comment |
-| --- | --- | --- |
-| newer | Unknown | Needs feddback |
-| v13.0 | Yes | Some Odoo model names changed (e.g account.invoice > account.move) |
-| v12.0 | Yes | First tested version |
-| < v12 | Unknown | Needs feddback |
-
 Installation
 ============
 
@@ -49,8 +37,22 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of the client:
 
 ```console
-$ composer require ang3/php-odoo-api-client
+$ composer require zangra/php-odoo-api-client
 ```
+
+Requirements
+============
+
+- The PHP extension ```php-xmlrpc``` must be enabled.
+
+| Odoo server | Compatibility | Comment                                                            |
+|-------------| --- |--------------------------------------------------------------------|
+| newer       | Unknown | Needs feddback                                                     |
+| v17.0       | Yes | Tested version and working                                         |
+| v13.0       | Yes | Some Odoo model names changed (e.g account.invoice > account.move) |
+| v12.0       | Yes | First tested version                                               |
+| < v12       | Unknown | Needs feddback                                                     |
+
 
 This command requires you to have Composer installed globally, as explained
 in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
