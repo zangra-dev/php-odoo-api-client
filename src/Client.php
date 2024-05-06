@@ -350,6 +350,11 @@ class Client
         return (array) $this->call($modelName, self::LIST_FIELDS, [], $options);
     }
 
+    public function listModels(): array
+    {
+        return (array) $this->call('ir.model', 'search_read', [], ['fields' => ['name','model','state']]);
+    }
+
     /**
      * @return mixed
      */
