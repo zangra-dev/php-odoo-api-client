@@ -497,6 +497,11 @@ class Client
         return $this;
     }
 
+    public function listModels(): array
+    {
+        return (array) $this->call('ir.model', 'search_read', [], ['fields' => ['name','model','state']]);
+    }
+
     /**
      * @internal
      */
