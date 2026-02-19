@@ -264,10 +264,9 @@ class Client
      *
      * @return array<int, array>
      */
-    public function findAll(string $modelName, array $options = []): ?array
+    public function findAll(string $modelName, array $options = []): array
     {
-        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, $this->expr()->normalizeDomains(null) , $options);
-        return $result;
+        return $this->findBy($modelName, null, $options);
     }
 
     /**
@@ -280,7 +279,7 @@ class Client
      */
     public function findBy(string $modelName, iterable $criteria = null, array $options = []): array
     {
-        return (array) $this->call($modelName, OrmQuery::SEARCH_READ, $criteria , $options);
+        return (array) $this->call($modelName, OrmQuery::SEARCH_READ, $this->expr()->normalizeDomains($criteria), $options);
     }
 
     /**
@@ -295,16 +294,28 @@ class Client
         return array_shift($result);
     }
 
+    public function findAllBy(string $modelName, $criteria, array $options = []): ?array
+    {
+        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, $criteria , $options);
+        return $result;
+    }
+
     public function findStockDatas($warehouseId, $criteria, array $options = []): ?array
     {
         $results = (array) $this->call('stock.quant', OrmQuery::SEARCH_READ, $criteria , $options);
+        $stockQuantity = [];
         foreach ($results as $result) {
             if ($result['warehouse_id'] && $result['warehouse_id'][0] === $warehouseId ) {
-                return  $result;
+                if(!key_exists('id', $stockQuantity)) {
+                    $stockQuantity['id'] = $result['id'];
+                    $stockQuantity['quantity'] = 0;
+                    $stockQuantity['write_date'] = $result['write_date'];
+                }
+                $stockQuantity['quantity'] += (int) $result['quantity'];
             }
         }
 
-        return [];
+        return $stockQuantity;
     }
 
     /**
@@ -349,11 +360,6 @@ class Client
     public function listFields(string $modelName, array $options = []): array
     {
         return (array) $this->call($modelName, self::LIST_FIELDS, [], $options);
-    }
-
-    public function listModels(): array
-    {
-        return (array) $this->call('ir.model', 'search_read', [], ['fields' => ['name','model','state']]);
     }
 
     /**
