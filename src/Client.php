@@ -264,9 +264,10 @@ class Client
      *
      * @return array<int, array>
      */
-    public function findAll(string $modelName, array $options = []): array
+    public function findAll(string $modelName, array $options = []): ?array
     {
-        return $this->findBy($modelName, null, $options);
+        $result = (array) $this->call($modelName, OrmQuery::SEARCH_READ, $this->expr()->normalizeDomains(null) , $options);
+        return $result;
     }
 
     /**
@@ -279,7 +280,7 @@ class Client
      */
     public function findBy(string $modelName, iterable $criteria = null, array $options = []): array
     {
-        return (array) $this->call($modelName, OrmQuery::SEARCH_READ, $this->expr()->normalizeDomains($criteria), $options);
+        return (array) $this->call($modelName, OrmQuery::SEARCH_READ, $criteria , $options);
     }
 
     /**
@@ -348,6 +349,11 @@ class Client
     public function listFields(string $modelName, array $options = []): array
     {
         return (array) $this->call($modelName, self::LIST_FIELDS, [], $options);
+    }
+
+    public function listModels(): array
+    {
+        return (array) $this->call('ir.model', 'search_read', [], ['fields' => ['name','model','state']]);
     }
 
     /**
